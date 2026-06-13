@@ -1,0 +1,280 @@
+/* ===================================================
+   _next-container.scss
+=================================================== */
+
+.next-container {
+    width: 100%;
+    height: auto;           /* fixed height hatao */
+    min-height: 700px;
+    position: relative;
+    background-color: #03030a;
+    padding-bottom: 80px;
+    overflow: hidden;
+  }
+  
+  /* ── Blob ── */
+  .blob-1 {
+    position: absolute;
+    width: 800px;
+    height: 500px;
+    background: linear-gradient(120deg, #1450c0, #01b7ff, #002cee);
+    filter: blur(80px);
+    opacity: 0.4;
+    top: 30%;
+    left: 0%;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: morph 10s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  @keyframes morph {
+    0%   { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50%  { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+    100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  }
+  
+  /* ── Main container ── */
+  .my-container {
+    position: relative;   /* absolute theke relative — layout fix */
+    z-index: 2;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* ── About text ── */
+  .about-us {
+    text-align: center;
+    color: aliceblue;
+    padding-top: 60px;
+  }
+  
+  .about-text {
+    font-size: 40px;
+    font-weight: 700;
+    font-family: poppins, sans-serif;
+  }
+  
+  .about-paragraph {
+    padding-top: 20px;
+    font-family: poppins, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* ── Cards ── */
+  .about-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 60px;
+  }
+  
+  .card {
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    align-items: center;
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s forwards;
+  }
+  
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Card images — sob same height */
+  .mentor-img,
+  .learn-img,
+  .project-img,
+  .job-img {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  
+  .mentor-text {
+    color: #fff;           /* black theke white — dark bg e visible hobe */
+    font-weight: 500;
+    padding-top: 14px;
+    font-size: 15px;
+  }
+  
+  /* ── Read button ── */
+  .read {
+    background: linear-gradient(to bottom, #0278a7, #072eda);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    width: 130px;
+    height: 38px;
+    margin-top: 16px;
+    margin-left: 0;        /* center align fix */
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .read:hover {
+    background: rgba(49, 47, 47, 0.815);
+    color: #fff;           /* hover e color white rakho */
+  }
+  
+  /* ── Stats ── */
+  .stats {
+    display: flex;
+    gap: 60px;
+    justify-content: center;   /* center align */
+    position: relative;        /* absolute theke relative */
+    padding-top: 60px;
+    z-index: 2;
+  }
+  
+  .student h2,
+  .course h2,
+  .success h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .student p,
+  .course p,
+  .success p {
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  /* ═══════════════════════════════════════════
+     RESPONSIVE
+  ═══════════════════════════════════════════ */
+  
+  /* Tablet */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .next-container {
+      min-height: auto;
+      padding-bottom: 60px;
+    }
+  
+    .blob-1 {
+      width: 400px;
+      height: 250px;
+    }
+  
+    .about-text      { font-size: 32px; }
+    .about-paragraph { font-size: 14px; }
+  
+    .about-features {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+  
+    .mentor-img,
+    .learn-img,
+    .project-img,
+    .job-img {
+      height: 150px;
+    }
+  
+    .stats {
+      gap: 40px;
+      padding-top: 50px;
+    }
+  
+    .student h2,
+    .course h2,
+    .success h2 { font-size: 32px; }
+  
+    .student p,
+    .course p,
+    .success p  { font-size: 16px; }
+  }
+  
+  /* Mobile */
+  @media screen and (max-width: 767px) {
+    .next-container {
+      min-height: auto;
+      padding-bottom: 50px;
+    }
+  
+    .blob-1 {
+      width: 250px;
+      height: 150px;
+      top: 10%;
+      left: -5%;
+    }
+  
+    .about-us     { padding-top: 40px; }
+    .about-text   { font-size: 24px; }
+    .about-paragraph {
+      font-size: 13px;
+      padding: 10px 8px 0;
+    }
+  
+    /* Mobile e horizontal scroll */
+    .about-features {
+      display: flex;
+      overflow-x: auto;
+      gap: 14px;
+      margin-top: 30px;
+      padding-bottom: 12px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .about-features::-webkit-scrollbar { display: none; }
+  
+    .card {
+      flex: 0 0 200px;
+      padding: 14px;
+      width:80%;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+    }
+  
+    .mentor-img,
+    .learn-img,
+    .project-img,
+    .job-img {
+      height: 120px;
+    }
+  
+    .mentor-text { font-size: 13px; }
+  
+    .read {
+      width: 110px;
+      height: 34px;
+      font-size: 13px;
+    }
+  
+    /* Stats stack mobile e */
+    .stats {
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      padding-top: 40px;
+    }
+  
+    .student h2,
+    .course h2,
+    .success h2 { font-size: 30px; }
+  
+    .student p,
+    .course p,
+    .success p  { font-size: 15px; }
+  }

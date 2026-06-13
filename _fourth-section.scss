@@ -1,0 +1,174 @@
+/* ===================================================
+   _fourth-section.scss
+=================================================== */
+
+.fourth-container {
+    width: 100%;
+    height: auto;
+    min-height: 700px;
+    background: #03030a;
+    padding-bottom: 80px;
+    overflow: hidden;
+  }
+  
+  /* ── Section Header ── */
+  .sucess-text {
+    text-align: center;
+    color: #fff;
+    padding-top: 70px;
+  }
+  
+  .sucess-text h1 {
+    font-size: 40px;
+    font-weight: 700;
+  }
+  
+  .sucess-text p {
+    font-size: 15px;
+  }
+  
+  /* ── Slider ── */
+  .slider-two {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 60px;
+    padding: 30px 0;
+  }
+  
+  .track-two {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scrollTwo 18s linear infinite;  /* speed thik kora */
+  }
+  
+  /* Hover e pause */
+  .track-two:hover {
+    animation-play-state: paused;
+  }
+  
+  /* Loop fix — exactly half width translate */
+  @keyframes scrollTwo {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }  /* -20% broken chilo */
+  }
+  
+  /* ── Cards ── */
+  .scnd-card {
+    width: 320px;           /* 400 theke 320 — better fit */
+    height: auto;           /* fixed height hatao */
+    min-height: 460px;
+    border-radius: 16px;
+    background: #abc2d1;
+    display: inline-block;
+    flex-shrink: 0;
+    font-size: 20px;
+    color: #03030a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .scnd-card:hover {
+    transform: translateY(-12px) scale(1.04);
+    box-shadow: 0 10px 20px rgba(36, 72, 105, 0.6);
+  }
+  
+  .scnd-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;      /* fill theke cover — stretch hobe na */
+    border-radius: 16px 16px 0 0;
+  }
+  
+  /* ── Card Text ── */
+  .worker-text {
+    padding: 0 16px;
+  }
+  
+  .worker-text h1 {
+    font-size: 22px;
+    text-align: center;
+    color: #000;
+    padding-top: 16px;
+  }
+  
+  .worker-text h2 {
+    font-size: 13px;
+    text-align: center;
+    color: #333;
+    padding-top: 4px;
+  }
+  
+  .worker-text p {
+    padding-top: 12px;
+    font-size: 12px;
+    text-align: center;
+    color: rgb(43, 43, 43);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  
+  /* ═══════════════════════════════════════════
+     RESPONSIVE
+  ═══════════════════════════════════════════ */
+  
+  /* Tablet */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .fourth-container {
+      min-height: auto;
+      padding-bottom: 60px;
+    }
+  
+    .sucess-text { padding-top: 50px; }
+    .sucess-text h1 { font-size: 32px; }
+  
+    .slider-two { margin-top: 40px; }
+  
+    .scnd-card {
+      width: 280px;
+      min-height: 420px;
+    }
+  
+    .scnd-card img { height: 220px; }
+  
+    .worker-text h1 { font-size: 18px; }
+    .worker-text h2 { font-size: 12px; }
+  }
+  
+  /* Mobile */
+  @media screen and (max-width: 767px) {
+    .fourth-container {
+      min-height: auto;
+      padding-bottom: 50px;
+    }
+  
+    .sucess-text {
+      padding-top: 40px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  
+    .sucess-text h1 { font-size: 24px; }
+    .sucess-text p  { font-size: 13px; }
+  
+    .slider-two {
+      margin-top: 30px;
+      padding: 20px 0;
+    }
+  
+    .scnd-card {
+      width: 240px;
+      min-height: 380px;
+    }
+  
+    .scnd-card img { height: 190px; }
+  
+    .worker-text h1 { font-size: 17px; }
+    .worker-text h2 { font-size: 12px; }
+    .worker-text p  { font-size: 11px; }
+  
+    /* Mobile e hover effect off */
+    .scnd-card:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }

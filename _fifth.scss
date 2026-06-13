@@ -1,0 +1,215 @@
+/* ===================================================
+   _fifth.scss
+=================================================== */
+
+.fifth-container {
+    width: 100%;
+    height: auto;
+    min-height: 600px;
+    background: #03030a;
+    padding-bottom: 80px;
+    overflow: hidden;
+  }
+  
+  /* ── Section Header ── */
+  .program-text {
+    color: #fff;
+    text-align: center;
+    padding-top: 70px;
+  }
+  
+  .program-text h1 {
+    font-size: 40px;
+    font-weight: 700;
+  }
+  
+  .program-text p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.75);
+    margin-top: 8px;
+  }
+  
+  /* ── Slider ── */
+  .slider-three {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 60px;       /* 150px theke 60px */
+    padding: 30px 0;
+  }
+  
+  .track-three {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scrollThree 25s linear infinite; /* name conflict fix */
+  }
+  
+  /* Hover e pause */
+  .track-three:hover {
+    animation-play-state: paused;
+  }
+  
+  /* scrollThree — fourth er scroll name conflict fix */
+  @keyframes scrollThree {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  
+  /* ── Cards ── */
+  .third-card {
+    width: 280px;
+    height: auto;           /* fixed height hatao */
+    min-height: 380px;
+    border-radius: 28px;
+    background: #1c3647;
+    flex-shrink: 0;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    padding-bottom: 20px;
+  }
+  
+  .third-card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 20px rgba(188, 173, 255, 0.4);
+  }
+  
+  .third-card .img-fluid {
+    width: 100%;
+    height: 180px;
+    border-radius: 28px 28px 0 0;
+    object-fit: cover;      /* stretch fix */
+    display: block;
+  }
+  
+  .third-card h1 {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 16px 16px 0;
+    line-height: 1.3;
+  }
+  
+  .third-card h2 {
+    font-size: 12px;
+    font-weight: 400;
+    padding: 6px 16px 0;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+  }
+  
+  /* ── Duration badge ── */
+  .duration {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    padding: 10px 16px 0;
+  }
+  
+  .dur-year {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    background: rgba(255,255,255,0.08);
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+  
+  .dur-uni {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  /* ── Apply buttons ── */
+  .apply2,
+  .apply3 {
+    display: block;
+    margin: 14px 16px 0;
+    width: calc(100% - 32px);
+    height: 36px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #0278a7, #072eda);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .apply2:hover,
+  .apply3:hover {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+  }
+  
+  /* ═══════════════════════════════════════════
+     RESPONSIVE
+  ═══════════════════════════════════════════ */
+  
+  /* Tablet */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .fifth-container {
+      min-height: auto;
+      padding-bottom: 60px;
+    }
+  
+    .program-text { padding-top: 55px; }
+    .program-text h1 { font-size: 32px; }
+    .program-text p  { font-size: 15px; }
+  
+    .slider-three { margin-top: 40px; }
+  
+    .third-card {
+      width: 250px;
+      min-height: 340px;
+    }
+  
+    .third-card .img-fluid { height: 160px; }
+    .third-card h1 { font-size: 16px; }
+  }
+  
+  /* Mobile */
+  @media screen and (max-width: 767px) {
+    .fifth-container {
+      min-height: auto;
+      padding-bottom: 50px;
+    }
+  
+    .program-text {
+      padding-top: 40px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  
+    .program-text h1 { font-size: 24px; }
+    .program-text p  { font-size: 13px; }
+  
+    .slider-three {
+      margin-top: 30px;
+      padding: 20px 0;
+    }
+  
+    .third-card {
+      width: 220px;
+      min-height: 320px;
+    }
+  
+    .third-card .img-fluid { height: 140px; }
+    .third-card h1 { font-size: 15px; padding: 12px 12px 0; }
+    .third-card h2 { font-size: 11px; padding: 4px 12px 0; }
+  
+    .duration { padding: 8px 12px 0; }
+  
+    .apply2,
+    .apply3 {
+      margin: 10px 12px 0;
+      width: calc(100% - 24px);
+      height: 32px;
+      font-size: 12px;
+    }
+  
+    /* Mobile e hover off */
+    .third-card:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }

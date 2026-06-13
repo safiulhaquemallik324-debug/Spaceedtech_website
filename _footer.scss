@@ -1,0 +1,111 @@
+/* ===================================================
+   _footer.scss
+=================================================== */
+
+.footer {
+    width: 100%;
+    height: auto;           /* fixed height hatao */
+    background: #000;
+    padding: 60px 0 30px;
+  }
+  
+  /* ── Footer columns wrapper ── */
+  .row2 {
+    display: flex;
+    flex-wrap: wrap;        /* mobile e wrap hobe */
+    gap: 40px;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  /* ── footer-col — col-3 Bootstrap clash fix ── */
+  .footer-col {
+    flex: 1 1 180px;        /* fluid, min 180px */
+    color: #fff;
+    text-align: left;
+  }
+  
+  .footer-col h1 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #fff;
+  }
+  
+  .footer-col p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    margin: 0;
+  }
+  
+  /* ── Copyright ── */
+  .copyright {
+    margin-top: 50px;
+    padding: 20px 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+  }
+  
+  .copyright p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+  }
+  
+  /* ═══════════════════════════════════════════
+     RESPONSIVE
+  ═══════════════════════════════════════════ */
+  
+  /* Tablet */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .footer {
+      padding: 50px 0 24px;
+    }
+  
+    .row2 {
+      gap: 28px;
+    }
+  
+    .footer-col {
+      flex: 1 1 160px;
+    }
+  
+    .footer-col h1 { font-size: 16px; }
+    .footer-col p  { font-size: 13px; }
+  
+    .copyright { margin-top: 40px; }
+    .copyright p { font-size: 12px; }
+  }
+  
+  /* Mobile */
+  @media screen and (max-width: 767px) {
+    .footer {
+      padding: 40px 0 20px;
+    }
+  
+    .row2 {
+      flex-direction: column;  /* mobile e stack */
+      gap: 28px;
+      padding: 0 24px;
+    }
+  
+    .footer-col {
+      flex: unset;
+      width: 100%;
+      text-align: center;      /* mobile e center */
+    }
+  
+    .footer-col h1 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+  
+    .footer-col p { font-size: 13px; }
+  
+    .copyright {
+      margin-top: 30px;
+      padding: 16px 24px 0;
+    }
+  
+    .copyright p { font-size: 12px; }
+  }

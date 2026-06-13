@@ -1,0 +1,138 @@
+/* ===================================================
+   _three-container.scss
+=================================================== */
+
+.three-container {
+    width: 100%;
+    height: auto;
+    background-color: #03030a;
+    padding-bottom: 60px;
+  }
+  
+  .partner-text {
+    text-align: center;
+    color: #fff;
+  }
+  
+  .partner-text h2 {
+    font-size: 45px;
+    padding-top: 90px;
+    font-weight: 700;
+  }
+  
+  .partner-text p {
+    font-size: 17px;
+  }
+  
+  /* ── Buttons — shared styles ── */
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;        /* mobile e next line e jabe */
+    gap: 12px;
+    justify-content: center;
+    margin-top: 60px;
+    padding: 0 16px;
+  }
+  
+  /* Sob button ek sathe — repeat hobe na */
+  .buttons .uni,
+  .buttons .isro,
+  .buttons .aero,
+  .buttons .manu,
+  .buttons .it,
+  .buttons .gov {
+    border-radius: 30px;
+    height: 40px;
+    padding: 0 20px;      /* fixed width er bodole padding — text fit hobe */
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s ease;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(209, 209, 209, 0.1);
+    color: #fff;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  
+  .buttons .uni:hover,
+  .buttons .isro:hover,
+  .buttons .aero:hover,
+  .buttons .manu:hover,
+  .buttons .it:hover,
+  .buttons .gov:hover {
+    transform: scale(1.08);
+    background: #0c0c0c;
+  }
+  
+  /* ═══════════════════════════════════════════
+     RESPONSIVE
+  ═══════════════════════════════════════════ */
+  
+  /* Tablet */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .partner-text h2 {
+      font-size: 36px;
+      padding-top: 70px;
+    }
+  
+    .partner-text p {
+      font-size: 15px;
+    }
+  
+    .buttons {
+      margin-top: 40px;
+      gap: 10px;
+    }
+  
+    .buttons .uni,
+    .buttons .isro,
+    .buttons .aero,
+    .buttons .manu,
+    .buttons .it,
+    .buttons .gov {
+      font-size: 13px;
+      height: 38px;
+      padding: 0 16px;
+    }
+  }
+  
+  /* Mobile */
+  @media screen and (max-width: 767px) {
+    .partner-text h2 {
+      font-size: 26px;
+      padding-top: 50px;
+    }
+  
+    .partner-text p {
+      font-size: 13px;
+      padding: 0 16px;
+    }
+  
+    .buttons {
+      margin-top: 28px;
+      gap: 8px;
+      padding: 0 12px;
+    }
+  
+    .buttons .uni,
+    .buttons .isro,
+    .buttons .aero,
+    .buttons .manu,
+    .buttons .it,
+    .buttons .gov {
+      font-size: 12px;
+      height: 36px;
+      padding: 0 14px;
+    }
+  
+    /* hover e scale cancel — mobile e touch weird lage */
+    .buttons .uni:hover,
+    .buttons .isro:hover,
+    .buttons .aero:hover,
+    .buttons .manu:hover,
+    .buttons .it:hover,
+    .buttons .gov:hover {
+      transform: none;
+    }
+  }

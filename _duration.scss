@@ -1,0 +1,128 @@
+/* ===================================================
+   _duration.scss
+=================================================== */
+
+/* ── Duration badge row ── */
+.duration {
+    display: flex;
+    gap: 20px;              /* 50px theke 20px — overflow fix */
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;        /* mobile e wrap hobe */
+  }
+  
+  /* span based — h5/h3 er bodole (new HTML e span ache) */
+  .dur-year,
+  .dur-uni {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+  
+  .dur-year {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 3px 12px;
+    border-radius: 20px;
+  }
+  
+  /* Old h5/h3 support — jodi purano HTML thake */
+  .duration h5 {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  
+  .duration h3 {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+  }
+  
+  /* ── Apply buttons — shared ── */
+  .apply2,
+  .apply3 {
+    display: block;
+    border: none;
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    width: calc(100% - 32px);
+    height: 38px;
+    border-radius: 22px;
+    font-size: 15px;
+    margin: 14px auto 0;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .apply2:hover,
+  .apply3:hover {
+    background: linear-gradient(to right, #0278a7, #072eda);
+    color: #fff;            /* scale(0.5) hatao — button disappear hobe na */
+  }
+  
+  /* ── bsc2 overrides ── */
+  .bsc2 h1 {
+    padding-top: 16px;
+  }
+  
+  /* ═══════════════════════════════════════════
+     RESPONSIVE
+  ═══════════════════════════════════════════ */
+  
+  /* Tablet */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .duration {
+      gap: 14px;
+      margin-top: 14px;
+    }
+  
+    .dur-year,
+    .dur-uni,
+    .duration h5,
+    .duration h3 {
+      font-size: 12px;
+    }
+  
+    .apply2,
+    .apply3 {
+      height: 34px;
+      font-size: 14px;
+    }
+  }
+  
+  /* Mobile */
+  @media screen and (max-width: 767px) {
+    .duration {
+      gap: 10px;
+      margin-top: 10px;
+    }
+  
+    .dur-year,
+    .dur-uni,
+    .duration h5,
+    .duration h3 {
+      font-size: 11px;
+    }
+  
+    .apply2,
+    .apply3 {
+      height: 32px;
+      font-size: 13px;
+      margin-top: 10px;
+    }
+  
+    /* Mobile e hover off */
+    .apply2:hover,
+    .apply3:hover {
+      background: #fff;
+      color: #000;
+    }
+  }
